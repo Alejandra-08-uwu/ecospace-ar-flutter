@@ -11,6 +11,142 @@ class CatalogScreen extends StatefulWidget {
   State<CatalogScreen> createState() => _CatalogScreenState();
 }
 
+class _ProductImageCarousel extends StatefulWidget {
+  final Product product;
+
+  const _ProductImageCarousel({required this.product});
+
+  @override
+  State<_ProductImageCarousel> createState() => _ProductImageCarouselState();
+}
+
+class _ProductImageCarouselState extends State<_ProductImageCarousel> {
+  late final PageController _pageController;
+  int _currentIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final images = widget.product.imagenes;
+    if (images.isEmpty) {
+      return Container(
+        height: 280,
+        decoration: const BoxDecoration(
+          color: Color(0xFFE8E0D5),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+        ),
+        child: const Center(child: Icon(Icons.image_not_supported, size: 42, color: Colors.grey)),
+      );
+    }
+
+    return SizedBox(
+      height: 280,
+      child: Stack(
+        children: [
+          ClipRRect(
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
+            child: PageView.builder(
+              controller: _pageController,
+              itemCount: images.length,
+              onPageChanged: (index) => setState(() => _currentIndex = index),
+              itemBuilder: (context, index) {
+                final imagePath = images[index];
+                return Image.asset(
+                  imagePath,
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                  height: 280,
+                  errorBuilder: (context, error, stackTrace) {
+                    return Container(
+                      color: const Color(0xFFE8E0D5),
+                      child: Center(child: Icon(Icons.image_not_supported, size: 42, color: Colors.grey)),
+                    );
+                  },
+                );
+              },
+            ),
+          ),
+          if (images.length > 1) ...[
+            Positioned(
+              left: 8,
+              top: 0,
+              bottom: 0,
+              child: Center(
+                child: CircleAvatar(
+                  backgroundColor: Colors.black54,
+                  child: IconButton(
+                    icon: const Icon(Icons.chevron_left, color: Colors.white),
+                    onPressed: () {
+                      if (_currentIndex > 0) {
+                        _pageController.previousPage(
+                          duration: const Duration(milliseconds: 250),
+                          curve: Curves.easeInOut,
+                        );
+                      }
+                    },
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              right: 8,
+              top: 0,
+              bottom: 0,
+              child: Center(
+                child: CircleAvatar(
+                  backgroundColor: Colors.black54,
+                  child: IconButton(
+                    icon: const Icon(Icons.chevron_right, color: Colors.white),
+                    onPressed: () {
+                      if (_currentIndex < images.length - 1) {
+                        _pageController.nextPage(
+                          duration: const Duration(milliseconds: 250),
+                          curve: Curves.easeInOut,
+                        );
+                      }
+                    },
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              bottom: 8,
+              left: 0,
+              right: 0,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(images.length, (index) {
+                  final selected = index == _currentIndex;
+                  return Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 3),
+                    width: selected ? 10 : 8,
+                    height: selected ? 10 : 8,
+                    decoration: BoxDecoration(
+                      color: selected ? Colors.white : Colors.white70,
+                      shape: BoxShape.circle,
+                    ),
+                  );
+                }),
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+}
+
 class _CatalogScreenState extends State<CatalogScreen> {
   static const primary = Color(0xFF2D5016);
   static const secondary = Color(0xFFD4A373);
@@ -224,14 +360,7 @@ class _CatalogScreenState extends State<CatalogScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(
-              height: 150,
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
-                color: const Color(0xFFE8E0D5),
-              ),
-              child: Center(child: Icon(_iconoDe(p.icono), size: 48, color: secondary)),
-            ),
+            _ProductImageCarousel(product: p),
             Padding(
               padding: const EdgeInsets.all(14.0),
               child: Column(

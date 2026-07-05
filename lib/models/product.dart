@@ -7,6 +7,7 @@ class Product {
   final String co2;
   final String arUrl;
   final String icono; // nombre de icono (usamos Icons.* en la UI)
+  final List<String> imagenes; // rutas de los assets de las imágenes del producto
 
   const Product({
     required this.nombre,
@@ -17,6 +18,7 @@ class Product {
     required this.co2,
     required this.arUrl,
     required this.icono,
+    required this.imagenes,
   });
 }
 
@@ -31,6 +33,7 @@ const List<Product> catalogoProductos = [
     co2: '~42%',
     arUrl: 'https://mywebar.com/p/Project_0_tesqtr6gmo',
     icono: 'chair',
+    imagenes: ['images/silla.png', 'images/silla_2.png'],
   ),
   Product(
     nombre: 'Mesa Orgánica M-200',
@@ -41,6 +44,7 @@ const List<Product> catalogoProductos = [
     co2: '~38%',
     arUrl: 'https://mywebar.com/p/Project_1_o217krfu5g',
     icono: 'table_restaurant',
+    imagenes: ['images/mesa.png', 'images/mesa_2.png'],
   ),
   Product(
     nombre: 'Estante Modular C-300',
@@ -51,6 +55,7 @@ const List<Product> catalogoProductos = [
     co2: '~45%',
     arUrl: 'https://mywebar.com/p/Project_2_n90m9rjemg',
     icono: 'shelves',
+    imagenes: ['images/estante.png', 'images/estante_2.png'],
   ),
   Product(
     nombre: 'Banco Minimalista B-400',
@@ -61,5 +66,6 @@ const List<Product> catalogoProductos = [
     co2: '~30%',
     arUrl: 'https://mywebar.com/p/Project_3_vbplprm9l2',
     icono: 'weekend',
+    imagenes: ['images/banco.png', 'images/banco_2.png'],
   ),
 ];
