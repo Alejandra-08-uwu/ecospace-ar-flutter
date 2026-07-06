@@ -1024,7 +1024,7 @@ p.a31()
 return p},
 aIa(a){return new A.a27($.ai,a)},
 ats(){var s,r,q,p,o=v.G,n=o.window,m=A.aHJ(n.navigator)
-if(m==null||m.length===0)return B.os
+if(m==null||m.length===0)return B.ot
 s=A.c([],t.ss)
 for(n=m.length,r=0;r<m.length;m.length===n||(0,A.u)(m),++r){q=m[r]
 p=new o.Intl.Locale(q)
@@ -7202,9 +7202,9 @@ r=a<2.5?(a-2)*10:(a-2.5)*2+6-1
 q=B.i.eh(B.c.fC(r),0,9)
 p=r-q
 s=1-p
-o=B.or[q]
+o=B.os[q]
 n=o[0]
-m=B.or[q+1]
+m=B.os[q+1]
 return new A.a8(s*n+p*m[0],1-1/(s*o[1]+p*m[1]))},
 TH(a,b,c,d){var s,r,q,p=b.X(0,a),o=Math.abs(c.a),n=Math.abs(c.b),m=Math.min(Math.abs(o),Math.abs(n)),l=m===0?B.ia:new A.v(o,n).dO(0,m)
 o=p.a
@@ -11419,8 +11419,8 @@ break
 case 4:s=l.a
 s===$&&A.a()
 s=A.bk(s,200)
-r=A.bk(A.a0R(l,B.ot,B.Ib),24)
-q=A.bk(A.a0R(l,B.ot,B.IP),32)
+r=A.bk(A.a0R(l,B.ou,B.Ib),24)
+q=A.bk(A.a0R(l,B.ou,B.IP),32)
 p=A.bk(l.a,10)
 o=A.bk(l.a,12)
 l.d===$&&A.a()
@@ -11430,8 +11430,8 @@ break
 case 5:s=l.a
 s===$&&A.a()
 s=A.bk(A.zj(s+240),40)
-r=A.bk(A.a0R(l,B.ov,B.Js),24)
-q=A.bk(A.a0R(l,B.ov,B.Jt),32)
+r=A.bk(A.a0R(l,B.ow,B.Js),24)
+q=A.bk(A.a0R(l,B.ow,B.Jt),32)
 p=A.bk(l.a+15,8)
 o=A.bk(l.a+15,12)
 l.d===$&&A.a()
@@ -12250,7 +12250,7 @@ axI(a,b,c){if(b!=null&&!b.j(0,B.y))return A.axb(b.b4(A.aI5(c)),a)
 return a},
 aI5(a){var s,r,q,p,o,n
 if(a<0)return 0
-for(s=0;r=B.ou[s],q=r.a,a>=q;){if(a===q||s+1===6)return r.b;++s}p=B.ou[s-1]
+for(s=0;r=B.ov[s],q=r.a,a>=q;){if(a===q||s+1===6)return r.b;++s}p=B.ov[s-1]
 o=p.a
 n=p.b
 return n+(a-o)/(q-o)*(r.b-n)},
@@ -42505,9 +42505,9 @@ case"table_restaurant":return B.Gb
 case"shelves":return B.Gd
 case"weekend":return B.G9
 default:return B.G0}},
-gED(){if(this.y==="todos")return B.ow
+gED(){if(this.y==="todos")return B.or
 var s=t.q3
-s=A.a2(new A.aJ(B.ow,new A.ain(this),s),s.i("A.E"))
+s=A.a2(new A.aJ(B.or,new A.ain(this),s),s.i("A.E"))
 return s},
 l(){var s=this,r=s.f,q=r.U$=$.aj()
 r.K$=0
@@ -46901,7 +46901,7 @@ n=o.e
 o=o.cx
 r=q.gabU()
 q.a.toString
-return new A.Cu(p,p,p,new A.alU(),p,p,p,p,p,n,B.Li,p,p,p,B.oA,q.gac0(),o,p,B.TF,s,p,r,p,p,B.os,!1,!1,p,p,p,new A.oy(q,t.bT))},
+return new A.Cu(p,p,p,new A.alU(),p,p,p,p,p,n,B.Li,p,p,p,B.oA,q.gac0(),o,p,B.TF,s,p,r,p,p,B.ot,!1,!1,p,p,p,new A.oy(q,t.bT))},
 J(a){var s,r=this.a4i(a)
 this.a.toString
 s=this.d
@@ -91783,6 +91783,15 @@ B.Id=s([0.2126,0.7152,0.0722],t.n)
 B.Jx=s([0.01932141,0.11916382,0.95034478],t.n)
 B.cR=s([B.Iy,B.Id,B.Jx],t.zg)
 B.oq=s([0,4,12,1,5,13,3,7,15],t.t)
+B.JA=s(["images/silla.png","images/silla_2.png"],t.s)
+B.NC=new A.jr("Silla Industrial E-100","S/.890","Pl\xe1stico PET reciclado + acero","15 botellas PET","85%","~42%","https://mywebar.com/p/Project_1_akmn6hor1q","chair",B.JA)
+B.Jo=s(["images/mesa.png","images/mesa_2.png"],t.s)
+B.Nz=new A.jr("Mesa Org\xe1nica M-200","S/.1,490","Madera recuperada + resina","8 kg de madera","80%","~38%","https://mywebar.com/p/Project_1_ymrfeiewb0","table_restaurant",B.Jo)
+B.Hk=s(["images/estante.png","images/estante_2.png"],t.s)
+B.NA=new A.jr("Estante Modular C-300","S/.1,200","Cart\xf3n reciclado + bamb\xfa","12 kg de cart\xf3n","90%","~45%","https://mywebar.com/p/Project_4_zqr6wivhs3","shelves",B.Hk)
+B.IN=s(["images/banco.png","images/banco_2.png"],t.s)
+B.NB=new A.jr("Banco Minimalista B-400","S/.750","Pl\xe1stico PET + fibras textiles","22 botellas PET + 3 kg textil","75%","~30%","https://mywebar.com/p/Project_3_pmey3il33t","weekend",B.IN)
+B.or=s([B.NC,B.Nz,B.NA,B.NB],A.as("z<jr>"))
 B.Yf=new A.fC(0,1)
 B.Yk=new A.fC(0.5,1)
 B.Yn=new A.fC(0.5375,0.75)
@@ -91813,7 +91822,7 @@ B.In=s([4.08649929,2.23811846],t.n)
 B.IA=s([4.85481134,2.47563463],t.n)
 B.Ic=s([5.62945551,2.72948597],t.n)
 B.Il=s([6.43023796,2.98020421],t.n)
-B.or=s([B.Ik,B.Hm,B.Jc,B.Je,B.I9,B.If,B.IH,B.In,B.IA,B.Ic,B.Il],t.zg)
+B.os=s([B.Ik,B.Hm,B.Jc,B.Je,B.I9,B.If,B.IH,B.In,B.IA,B.Ic,B.Il],t.zg)
 B.I8=s([B.iZ,B.j_],A.as("z<wC>"))
 B.Ib=s([18,15,10,12,15,18,15,12,12],t.n)
 B.bk=new A.jK(0,"label")
@@ -91833,16 +91842,16 @@ B.bI=new A.ei(9,"counter")
 B.cA=new A.ei(10,"container")
 B.Im=s([B.aI,B.b3,B.a1,B.b9,B.ba,B.bb,B.a9,B.aP,B.bH,B.bI,B.cA],A.as("z<ei>"))
 B.JD=new A.oT("en",null,"US")
-B.os=s([B.JD],t.ss)
-B.ot=s([0,41,61,101,131,181,251,301,360],t.n)
+B.ot=s([B.JD],t.ss)
+B.ou=s([0,41,61,101,131,181,251,301,360],t.n)
 B.Y4=new A.lf(0,0)
 B.Y9=new A.lf(1,0.05)
 B.Y7=new A.lf(3,0.08)
 B.Y8=new A.lf(6,0.11)
 B.Y6=new A.lf(8,0.12)
 B.Y5=new A.lf(12,0.14)
-B.ou=s([B.Y4,B.Y9,B.Y7,B.Y8,B.Y6,B.Y5],A.as("z<lf>"))
-B.ov=s([0,21,51,121,151,191,271,321,360],t.n)
+B.ov=s([B.Y4,B.Y9,B.Y7,B.Y8,B.Y6,B.Y5],A.as("z<lf>"))
+B.ow=s([0,21,51,121,151,191,271,321,360],t.n)
 B.Iu=s([-1,0,0,1,0,0,-1,0,1,0,0,0,-1,1,0,1,1,1,1,0],t.n)
 B.AZ=new A.HX(2,"outer")
 B.n_=new A.E(0.09803921568627451,0,0,0,B.h)
@@ -91861,15 +91870,6 @@ B.D7=new A.o_(0,"auto")
 B.D8=new A.o_(1,"full")
 B.D9=new A.o_(2,"chromium")
 B.II=s([B.D7,B.D8,B.D9,B.cn],A.as("z<o_>"))
-B.JA=s(["images/silla.png","images/silla_2.png"],t.s)
-B.NA=new A.jr("Silla Industrial E-100","S/.890","Pl\xe1stico PET reciclado + acero","15 botellas PET","85%","~42%","https://mywebar.com/p/Project_0_tesqtr6gmo","chair",B.JA)
-B.Jo=s(["images/mesa.png","images/mesa_2.png"],t.s)
-B.Nz=new A.jr("Mesa Org\xe1nica M-200","S/.1,490","Madera recuperada + resina","8 kg de madera","80%","~38%","https://mywebar.com/p/Project_1_o217krfu5g","table_restaurant",B.Jo)
-B.Hk=s(["images/estante.png","images/estante_2.png"],t.s)
-B.NB=new A.jr("Estante Modular C-300","S/.1,200","Cart\xf3n reciclado + bamb\xfa","12 kg de cart\xf3n","90%","~45%","https://mywebar.com/p/Project_2_n90m9rjemg","shelves",B.Hk)
-B.IN=s(["images/banco.png","images/banco_2.png"],t.s)
-B.NC=new A.jr("Banco Minimalista B-400","S/.750","Pl\xe1stico PET + fibras textiles","22 botellas PET + 3 kg textil","75%","~30%","https://mywebar.com/p/Project_3_vbplprm9l2","weekend",B.IN)
-B.ow=s([B.NA,B.Nz,B.NB,B.NC],A.as("z<jr>"))
 B.b7=new A.eM(1,"fuchsia")
 B.IK=s([B.a3,B.b7,B.E,B.aY,B.aw,B.aZ],A.as("z<eM>"))
 B.Al=new A.uO(0,"topLeft")
